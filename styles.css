@@ -1,0 +1,313 @@
+:root {
+    --bg-color: #fbfbfa;
+    --text-main: #222222;
+    --text-muted: #555555;
+    --accent-color: #b85d43; 
+    --font-heading: 'Antonio', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Evitamos por completo el desplazamiento vertical u horizontal del cuerpo */
+html, body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    height: 100vh;
+    overflow: hidden; 
+    display: flex;
+    flex-direction: column;
+}
+
+/* Encabezado */
+.main-header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid #e0e0de;
+    flex-shrink: 0;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+}
+
+.logo-text small {
+    font-size: 0.9rem;
+    display: block;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+}
+
+/* Estilos de botones de navegación simulando enlaces */
+.nav-menu {
+    display: flex;
+}
+
+
+
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-left: 25px;
+    cursor: pointer;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    color: var(--accent-color);
+}
+
+/* Línea sutil debajo del botón activo */
+.nav-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--accent-color);
+}
+
+/* Contenedor del Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espacio ideal entre el isotipo y el texto */
+}
+
+/* Control del tamaño del isotipo en el menú */
+.logo-img {
+    height: 45px; /* Altura perfecta para que no rompa las dimensiones de la barra */
+    width: auto;
+    object-fit: contain;
+}
+
+/* Estilo del texto del logo */
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    line-height: 1; /* Centra verticalmente el texto respecto a la imagen */
+}
+
+.logo-text small {
+    font-size: 0.85rem;
+    display: block;
+    letter-spacing: 4px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+
+
+
+/* Contenedor dinámico ocupará el espacio restante de la pantalla */
+/* Contenedor Principal Fijo para las Secciones */
+.content-wrapper {
+    flex-grow: 1;
+    position: relative; /* Clave para posicionar el fondo y las secciones */
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Marca de agua del logo de fondo */
+.content-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    /* Vinculación de tu imagen de logo */
+    background-image: url(./images/logo.jpg); /* Asegurate de usar el nombre exacto de tu archivo de imagen */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    
+    /* Dimensiones adaptables del logo de fondo */
+    width: 100%;
+    max-width: 800px;
+    height: 100%;
+    
+    /* Control de opacidad para que actúe como marca de agua sutil */
+    opacity: 0.08; /* Un 4% es ideal para que se note sin interferir con los textos oscuros */
+    
+    /* Lo enviamos al fondo absoluto dentro del contenedor */
+    z-index: 0; 
+    pointer-events: none; /* Evita que interfiera con los clics del usuario en la pantalla */
+}
+
+/* Manejo de visibilidad de las Secciones */
+.section-container {
+    display: none; /* Ocultas por defecto */
+    position: absolute;
+    top: 40px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    overflow-y: auto; /* Permite scroll interno de la tarjeta solo si el contenido desborda en pantallas chicas */
+    text-align: center;
+    z-index: 1;
+}
+
+/* Clase clave que muestra únicamente la sección activa */
+.section-container.active {
+    display: block;
+    animation: fadeIn 0.4s ease-in-out; /* Suave transición visual al aparecer */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* Grid de Productos */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--bg-color);
+    border: 1px solid #e0e0de;
+    border-radius: 12px;
+    padding: 30px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.product-image-placeholder {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.product-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Contenido Quiénes Somos */
+.about-content {
+    max-width: 700px;
+    margin: 40px auto 0 auto;
+}
+
+.about-text {
+    font-size: 1.15rem;
+    color: var(--text-main);
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Formulario de Contacto */
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e0e0de;
+    background-color: var(--bg-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    border-radius: 6px;
+    color: var(--text-main);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    outline: none;
+    border-color: var(--text-main);
+}
+
+.btn-submit {
+    background-color: var(--text-main);
+    color: var(--bg-color);
+    border: none;
+    padding: 15px 30px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 6px;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-color);
+}
+
+/* Footer Fijo */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #e0e0de;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+}

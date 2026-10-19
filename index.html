@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levar Atelier | Pizza Napolitana</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Vinculación del archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Encabezado / Navegación Fija -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                 <img src="./images/logo.jpg" alt="Levar Atelier Logo" class="logo-img">
+                <span class="logo-text">LEVAR <small>ATELIER</small></span>
+            </div>
+            <nav class="nav-menu">
+                <!-- Usamos data-target para controlar el cambio con JS sin mover el scroll -->
+                <button class="nav-btn active" data-target="productos">Nuestros Productos</button>
+                <button class="nav-btn" data-target="nosotros">Quiénes Somos</button>
+                <button class="nav-btn" data-target="contacto">Contacto</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenedor Principal Fijo para las Secciones -->
+    <main class="content-wrapper">
+
+        <!-- Sección: Nuestros Productos (Visible por defecto) -->
+        <section id="productos" class="section-container active">
+            <h2 class="section-title">Nuestros Productos</h2>
+            <p class="section-subtitle">Pizzas de masa madre e ingredientes seleccionados, listas para hornear.</p>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-image-placeholder">🍕</div>
+                    <h3>Margherita Especial</h3>
+                    <p>Salsa de tomate casera, mozzarella fiordilatte, albahaca fresca y aceite de oliva virgen extra.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-placeholder">🍕</div>
+                    <h3>Diavola Atelier</h3>
+                    <p>Salame picante premium, mozzarella, salsa de tomate de la casa y un toque de miel picante.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-image-placeholder">🍕</div>
+                    <h3>Fugazzeta de Masa Madre</h3>
+                    <p>Cebollas caramelizadas al horno de leña, mezcla de quesos artesanales y orégano fresco.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Quiénes Somos -->
+        <section id="nosotros" class="section-container">
+            <div class="about-content">
+                <h2 class="section-title">Quiénes Somos</h2>
+                <p class="about-text">
+                    En <strong>Levar Atelier</strong> entendemos que el secreto está en la espera. Creemos en el respeto por los procesos naturales, utilizando fermentaciones prolongadas de masa madre para lograr una corteza aireada, ligera y crujiente. 
+                </p>
+                <p class="about-text">
+                    Cada pizza es una obra artesanal moldeada a mano, uniendo la tradición napolitana con la dedicación de un taller de diseño.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección: Contacto -->
+        <section id="contacto" class="section-container">
+            <h2 class="section-title">Contacto</h2>
+            <p class="section-subtitle">¿Tenés dudas o querés hacer un pedido? Escribinos.</p>
+            
+            <form id="contactForm" class="contact-form">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" id="name" required placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="message">Mensaje</label>
+                    <textarea id="message" rows="4" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit" class="btn-submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="main-footer">
+        <p>&copy; 2026 Levar Atelier. Hecho con pasión y masa madre.</p>
+    </footer>
+
+    <!-- Vinculación del archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
