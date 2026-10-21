@@ -4,49 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Levar Atelier | Pizza Napolitana</title>
-   
     <link rel="preconnect" href="https://googleapis.com">
     <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Antonio:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://googleapis.com/css2?family=Antonio:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/@icon/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./images/logonormal.jpg">
 </head>
 <body>
 
     <header class="main-header">
         <div class="header-container">
             <div class="logo">
-                 <img src="./images/logo.jpg" alt="Levar Atelier Logo" class="logo-img">
+                 <img src="./images/logo.png" alt="Levar Atelier Logo" class="logo-img">
                 <span class="logo-text">LEVAR <small>ATELIER</small></span>
             </div>
             <nav class="nav-menu">
-                <button class="nav-btn active" data-target="productos">Productos</button>
+                 <button class="nav-btn active" data-target="inicio">Inicio</button>
+                <button class="nav-btn" data-target="productos">Productos</button>
                 <button class="nav-btn" data-target="nosotros">Nosotros</button>
                 <button class="nav-btn" data-target="contacto">Contacto</button>
             </nav>
         </div>
     </header>
 
-   
     <main class="content-wrapper">
 
+        <section id="inicio" class="section-container active">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">Levar Atelier</h1>
+                <p class="hero-legend">"El arte de la masa madre. Disfrutá de una auténtica pizza napolitana en casa, tal como si estuvieras en Italia."</p>
+                <button class="btn-hero-action" data-target="productos">Ver el Menú</button>
+            </div>
+         </section>
+
        
-        <section id="productos" class="section-container active">
+        <section id="productos" class="section-container ">
             <h2 class="section-title">Nuestros Productos</h2>
             <p class="section-subtitle">Pizzas de masa madre e ingredientes seleccionados, listas para hornear.</p>
             <div class="products-grid">
+
+
                 <div class="product-card">
-                    <div class="product-image-placeholder">🍕</div>
+                    <div class="product-image-container">
+                        <img src="./images/tomate.png" alt="Fugazzeta de Masa Madre" class="product-img-real">
+                    </div>
                     <h3>tomate</h3>
                     <p>Nuestra base insignia. Untada con una salsa de tomate artesanal cocinada a fuego lento, con el equilibrio justo de acidez y condimentos al mejor estilo napolitano.</p>
                 </div>
+
+
+
                 <div class="product-card">
-                    <div class="product-image-placeholder">🍕</div>
+                    <div class="product-image-container">
+                        <img src="./images/cebolla.png" alt="Fugazzeta de Masa Madre" class="product-img-real">
+                    </div>
                     <h3>cebolla</h3>
                     <p>La aliada perfecta para los amantes de los clásicos argentinos. Una base dorada y cubierta con cebolla finamente seleccionada, lista para transformarse en tu cocina.</p>
                 </div>
+
                 <div class="product-card">
-                    <div class="product-image-placeholder">🍕</div>
+                    <div class="product-image-container">
+                        
+                        <img src="./images/mixta.png" alt="Fugazzeta de Masa Madre" class="product-img-real">
+                    </div>
                     <h3>mixta</h3>
                     <p>El equilibrio perfecto para los indecisos. Mitad de nuestra emblemática salsa de tomate y mitad de la mejor cebolla dorada, todo sobre la misma masa alveolada.</p>
                 </div>
@@ -62,38 +85,99 @@
                 </p>
                 <p class="about-text">
                            
-                    ¡Hola! Te damos la bienvenida a LEVAR Atelier
+                    ¡Hola! Te damos la bienvenida a LEVAR Atelier.
 
-                    Detrás de cada borde inflado, crocante y alveolado que sale de nuestra cocina, está nuestra propia búsqueda personal: el deseo de recrear en casa la verdadera pizza estilo napolitano, respetando los tiempos de la naturaleza y el valor de lo hecho a mano.
-                    Como cocineros formados y especializados en las técnicas tradicionales de la pizza napolitana, entendimos que la excelencia no se puede apurar. Combinando el estudio del oficio con la paciencia, logramos dominar los secretos de la masa madre y desarrollamos una receta única.
-                    Hoy, desde nuestro cocina, amasamos con mucha dedicación cada prepizza, una por una con el objetivo de que nuestros clientes puedan disfrutar de una auténtica pizza napolitana en sus casas, sintiendo la misma experiencia, aroma y sabor que si estuvieran en la misma Italia.<br>
-                    ¡Gracias por sumarte a este viaje y dejarnos formar parte de tus momentos compartidos!
+                    Nos gustaria compartirte que detrás de cada borde inflado, crocante y alveolado que sale de nuestra cocina, está nuestra propia búsqueda personal: el deseo de recrear en casa la verdadera pizza al estilo napolitano, respetando los tiempos de la naturaleza y el valor de lo hecho a mano.
+                    Tambien que, como cocineros formados y especializados en las tradicionales pizza napolitana, entendimos que la excelencia no se puede apurar.Por eso mismo en Levar combinando el estudio del oficio con la paciencia, logrando dominar los secretos de la masa madre y desarrollando una receta única.
+                    Hoy nos enorgullese contarte que desde nuestra cocina, amasamos con mucha dedicación cada prepizza, una por una con el objetivo de que nuestros clientes puedan disfrutar de una auténtica pizza napolitana en sus casas, sintiendo la misma experiencia, aroma y sabor que si estuvieran en la misma Italia.<br>
+                    ¡Gracias por sumarte a este viaje y dejarnos formar parte de tus momentos compartidos! <br><br> <strong>LEVAR</strong> El verdadero sabor de la pizza Italana 🍕    
                     </p>
             </div>
         </section>
 
    
+        <!-- Sección: Contacto Totalmente Equilibrada -->
         <section id="contacto" class="section-container">
             <h2 class="section-title">Contacto</h2>
-            <p class="section-subtitle">¿Tenés dudas o querés hacer un pedido? Escribinos.</p>
+            <p class="section-subtitle">¿Tenés dudas o querés hacer un pedido? Ponete en contacto con nuestro taller.</p>
             
-            <form id="contactForm" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nombre</label>
-                    <input type="text" id="name" required placeholder="Tu nombre">
+            <!-- Bloque de contenido en dos columnas -->
+            <div class="contact-grid-wrapper">
+                
+                <!-- Columna 1: Panel de Información Física -->
+                <div class="contact-info-panel">
+                    <h3 class="panel-inside-title">Datos del Atelier</h3>
+                    
+                    <div class="info-item">
+                        <i class="bi bi-telephone-fill"></i>
+                        <div class="info-text-box">
+                            <span>Celular Principal</span>
+                            <a href="https://wa.me/541153746284/?text=Hola...%20Me%20gustaria%20mas%20info." target="_blank">+54 11 53746284</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-whatsapp"></i>
+                        <div class="info-text-box">
+                            <span>Pedidos & Consultas</span>
+                            <a href="https://wa.me/541123572074/?text=Hola...%20Me%20gustaria%20hacer%20un%20pedido." target="_blank">+54 11 23572074</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="bi bi-geo-alt-fill"></i>
+                        <div class="info-text-box">
+                            <span>Ubicación</span>
+                            <p>Maipu 391, Banfield / Lomas de Zamora</p>
+                            <small>Buenos Aires, Argentina</small>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Mensaje</label>
-                    <textarea id="message" rows="4" required placeholder="¿En qué podemos ayudarte?"></textarea>
+
+                <!-- Columna 2: Formulario de Mensaje Tradicional -->
+                <form id="contactForm" class="contact-form">
+                    <h3 class="panel-inside-title">Envianos un mensaje</h3>
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" id="name" required placeholder="Tu nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje</label>
+                        <textarea id="message" rows="4" required placeholder="¿En qué podemos ayudarte?"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Mensaje</button>
+                </form>
+
+            </div>
+
+            <!-- Bloque del Mapa Integrado en el Eje Central -->
+            <div class="map-container-box">
+                <h3 class="panel-inside-title"><i class="bi bi-map"></i> Nuestra Zona de Cobertura</h3>
+                <div class="map-embed-frame">
+                    <!-- Renderizado dinámico del mapa de la zona de reparto -->
+                    <layout>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3278.4711963025507!2d-58.390331100000004!3d-34.74372139999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcd2a16871fa9d%3A0x1ae9ce2158815938!2sMaip%C3%BA%20391%2C%20B1828%20Banfield%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1792559144484!5m2!1ses!2sar" width="100%" height="800" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </layout>
                 </div>
-                <button type="submit" class="btn-submit">Enviar Mensaje</button>
-            </form>
+            </div>
         </section>
+
 
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2026 Levar Atelier. Hecho con pasión y masa madre.</p>
+        <div class="social-links">
+            <a href="https://www.instagram.com/atelier.levar/" target="_blank" aria-label="Instagram" class="social-icon">
+                <i class="bi bi-instagram"></i>
+            </a>
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook" class="social-icon">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://wa.me/541123572074/?text=Hola...%20Me%20gustaria%20hacer%20un%20pedido." target="_blank" aria-label="WhatsApp" class="social-icon">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+        </div>
+        <p class="footer-text">&copy; 2026 Levar Atelier. Hecho con pasión y masa madre.</p>
     </footer>
 
   

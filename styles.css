@@ -3,9 +3,15 @@
     --text-main: #222222;
     --text-muted: #555555;
     --accent-color: #b85d43; 
-    --font-heading: 'Antonio', sans-serif;
-    --font-body: 'Inter', sans-serif;
+   --font-levar: 'Bebas Neue', sans-serif;
+    --font-atelier: 'Inter', sans-serif;
+    --font-subtitulos: 'Marcellus', serif; /* Toque clásico italiano */
 }
+
+
+
+
+
 
 * {
     box-sizing: border-box;
@@ -13,23 +19,32 @@
     padding: 0;
 }
 
-/* Evitamos por completo el desplazamiento vertical u horizontal del cuerpo */
 html, body {
     background-color: var(--bg-color);
     color: var(--text-main);
     font-family: var(--font-body);
+   -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     height: 100vh;
-    overflow: hidden; 
+    overflow: hidden;
     display: flex;
     flex-direction: column;
+    
 }
 
 /* Encabezado */
+
 .main-header {
     background-color: var(--bg-color);
     border-bottom: 1px solid #e0e0de;
     flex-shrink: 0;
+    position: relative;
+    top: 0;
+    transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 1000; /* Prioridad máxima por encima de cualquier texto o sección */
 }
+
 
 .header-container {
     max-width: 1100px;
@@ -41,19 +56,24 @@ html, body {
 }
 
 .logo-text {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    letter-spacing: 2px;
+    font-family: var(--font-levar);
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1;
 }
 
 .logo-text small {
-    font-size: 0.9rem;
+   font-family: var(--font-atelier);
+    font-size: 0.85rem;
+    font-weight: 300; /* Trazo fino */
+    text-transform: uppercase;
+    letter-spacing: 6px; /* Clave: genera el espaciado abierto del logo original */
     display: block;
-    letter-spacing: 4px;
-    color: var(--text-muted);
+    margin-top: 4px;
 }
 
-/* Estilos de botones de navegación simulando enlaces */
 .nav-menu {
     display: flex;
 }
@@ -79,7 +99,6 @@ html, body {
     color: var(--accent-color);
 }
 
-/* Línea sutil debajo del botón activo */
 .nav-btn.active::after {
     content: '';
     position: absolute;
@@ -94,99 +113,223 @@ html, body {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px; /* Espacio ideal entre el isotipo y el texto */
-}
+    gap: 12px; }
 
-/* Control del tamaño del isotipo en el menú */
+
+
 .logo-img {
-    height: 45px; /* Altura perfecta para que no rompa las dimensiones de la barra */
+    height: 80px; 
     width: auto;
     object-fit: contain;
 }
 
-/* Estilo del texto del logo */
+
 .logo-text {
-    font-family: var(--font-heading);
-    font-size: 1.8rem;
-    letter-spacing: 2px;
-    line-height: 1; /* Centra verticalmente el texto respecto a la imagen */
+    font-family: var(--font-levar);
+    font-size: 2rem; /* Subimos un poco el tamaño ya que Bebas Neue es naturalmente compacta */
+    font-weight: 200;  /* Esta fuente ya es gruesa por defecto */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 0.9;
+    display: inline-block;
+    
+    /* El secreto técnico: Estira la tipografía hacia arriba emulando el logo original */
+    transform: scaleY(1.15); 
+    transform-origin: bottom left;
 }
 
 .logo-text small {
-    font-size: 0.85rem;
+    font-family: var(--font-atelier);
+    font-size: 0.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 5px; /* Mantiene la apertura elegante debajo de LEVAR */
     display: block;
-    letter-spacing: 4px;
-    color: var(--text-muted);
-    margin-top: 2px;
+    margin-top: 6px;
+    
+    /* Reseteamos la escala para que ATELIER no se estire y quede clásica */
+    transform: scaleY(1.0); 
 }
 
 
 
-
-/* Contenedor dinámico ocupará el espacio restante de la pantalla */
-/* Contenedor Principal Fijo para las Secciones */
 .content-wrapper {
     flex-grow: 1;
-    position: relative; /* Clave para posicionar el fondo y las secciones */
-    max-width: 1100px;
+    position: relative; 
     width: 100%;
     margin: 0 auto;
     padding: 40px 20px;
+     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Marca de agua del logo de fondo */
+
 .content-wrapper::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
-    /* Vinculación de tu imagen de logo */
-    background-image: url(./images/logo.jpg); /* Asegurate de usar el nombre exacto de tu archivo de imagen */
+    background-image: url(./images/logo.png); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
     
-    /* Dimensiones adaptables del logo de fondo */
     width: 100%;
     max-width: 800px;
     height: 100%;
-    
-    /* Control de opacidad para que actúe como marca de agua sutil */
-    opacity: 0.08; /* Un 4% es ideal para que se note sin interferir con los textos oscuros */
-    
-    /* Lo enviamos al fondo absoluto dentro del contenedor */
+    opacity: 0.08; 
     z-index: 0; 
-    pointer-events: none; /* Evita que interfiera con los clics del usuario en la pantalla */
+    pointer-events: none; 
 }
 
-/* Manejo de visibilidad de las Secciones */
+
 .section-container {
-    display: none; /* Ocultas por defecto */
-    position: absolute;
-    top: 40px;
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    overflow-y: auto; /* Permite scroll interno de la tarjeta solo si el contenido desborda en pantallas chicas */
+    position: absolute; 
+    width: 100%;
+    max-height: 100%;
+    overflow-y: auto; 
+    z-index: 1; 
+    background: transparent ; 
+    display: flex;
+    flex-direction: column;
     text-align: center;
+    padding-top: 30px; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none; 
+    transform: scale(0.98); 
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; 
+}
+
+
+/* ==========================================================================
+   ESTILOS DE LA SECCIÓN DE INICIO (HERO)
+   ========================================================================== */
+#inicio {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px; /* Enmarca la sección como un cuadro flotante */
+    overflow: hidden;
+  
+}
+
+/* Capa oscura intermedia para asegurar que la tipografía blanca sea legible */
+.hero-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 90%;
+    border-radius: 12px; 
+   background-image: linear-gradient(
+                        to bottom, 
+                        rgba(0, 0, 0,0.2) 0%, 
+                        rgba(0, 0, 0,0.5) 60%, 
+                        rgba(0, 0, 0, 0.8) 100%
+                      ), 
+                      url('./images/foto-hero.png');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 1;
 }
 
+
+.hero-content {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; 
+    padding: 20px;
+    max-width: 800px;
+    color: #ffffff; 
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 15px;
+}
+
+.hero-legend {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic; /* Toque elegante para la leyenda */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    
+}
+
+/* Botón interactivo de acción */
+.btn-hero-action {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    padding: 12px 28px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s base, color 0.3s ease;
+}
+
+.btn-hero-action:hover {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+/* AJUSTE RESPONSIVO: Agregá esto dentro de tu @media (max-width: 768px) al final de tu archivo */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Clase clave que muestra únicamente la sección activa */
 .section-container.active {
-    display: block;
-    animation: fadeIn 0.4s ease-in-out; /* Suave transición visual al aparecer */
+    opacity: 1;
+    pointer-events: auto; /* Habilita los clics y el formulario */
+    transform: scale(1); /* Vuelve a su tamaño real de forma sutil */
 }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: scale(0.98); }
-    to { opacity: 1; transform: scale(1); }
-}
+
 
 .section-title {
-    font-family: var(--font-heading);
+    font-family: var(--font-levar);
+    font-weight: 300;
     font-size: 2.5rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -194,6 +337,7 @@ html, body {
 }
 
 .section-subtitle {
+     font-family: var(--font-subtitulos);
     color: var(--text-muted);
     margin-bottom: 40px;
     font-size: 1.1rem;
@@ -204,6 +348,10 @@ html, body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
+    width: 100%;
+    justify-content: center; /* Centra las tarjetas si queda espacio sobrante */
+    max-width: 900px; /* Acota el ancho para mantener armonía visual en el centro */
+    margin: 0 auto;
 }
 
 .product-card {
@@ -235,6 +383,32 @@ html, body {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
+
+/* Contenedor de la imagen del producto */
+.product-image-container {
+    width: 100%;
+    height: 200px; /* Altura fija uniforme para las tres tarjetas */
+    border-radius: 8px; /* Combina con el diseño curvado del logo */
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color: var(--bg-alt); /* Color base de carga */
+}
+
+/* Imagen real escalada y centrada */
+.product-img-real {
+
+    height: 100%;
+    object-fit: cover; /* Recorta la imagen para que llene el recuadro sin deformarse */
+    transition: transform 0.4s ease;
+}
+
+/* Efecto de zoom sutil al pasar el mouse por la tarjeta */
+.product-card:hover .product-img-real {
+    transform: scale(1.06);
+}
+
+
+
 
 /* Contenido Quiénes Somos */
 .about-content {
@@ -302,6 +476,146 @@ html, body {
     background-color: var(--accent-color);
 }
 
+
+
+
+/* ==========================================================================
+   ESTILOS COMPLEMENTARIOS DE LA SECCIÓN DE CONTACTO & MAPA
+   ========================================================================== */
+.contact-grid-wrapper {
+    display: flex;
+    width: 50%;
+   
+    gap: 40px;
+    margin: 0 auto 40px auto;
+    text-align: left;
+}
+
+/* Panel Informativo de Celulares y Dirección */
+.contact-info-panel {
+    flex: 1;
+    background-color: var(--bg-color);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.panel-inside-title {
+    font-family: var(--font-titulos);
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    color: var(--text-main);
+    border-bottom: 1px solid #e0e0de;
+    padding-bottom: 10px;
+}
+
+.contact-form {
+    flex: 1;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Items individuales de datos */
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-item i {
+    font-size: 1.4rem;
+    color: var(--accent-color); /* Tono terracota del horno para los iconos */
+    margin-top: 3px;
+}
+
+.info-text-box span {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.info-text-box a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.info-text-box a:hover {
+    color: var(--accent-color);
+}
+
+.info-text-box p {
+    font-size: 1.05rem;
+    color: var(--text-main);
+    line-height: 1.3;
+}
+
+.info-text-box small {
+    color: var(--text-muted);
+}
+
+/* Contenedor del Mapa Fijo en el centro */
+.map-container-box {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.map-embed-frame {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #e0e0de;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 15px;
+    background-color: var(--bg-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Footer Fijo */
 .main-footer {
     text-align: center;
@@ -310,4 +624,243 @@ html, body {
     color: var(--text-muted);
     font-size: 0.9rem;
     flex-shrink: 0;
+}
+/* Footer */
+.main-footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid #e0e0de;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Espacio equilibrado entre la lista de iconos y el texto de copyright */
+}
+
+/* Contenedor horizontal de las redes sociales */
+.social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Espacio elegante entre cada icono */
+}
+
+/* Estilo individual para cada icono */
+.social-icon {
+    color: var(--text-main); /* Toma el color gris oscuro/negro principal */
+    font-size: 1.5rem; /* Tamaño ideal y legible */
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+/* Efecto visual al pasar el mouse por encima */
+.social-icon:hover {
+    color: var(--accent-color); /* Cambia al tono terracota del horno */
+    transform: scale(1.15); /* Crece sutilmente de tamaño */
+}
+
+.footer-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/**************************************************/
+/* ==========================================================================
+   ESTILOS RESPONSIVOS (Para celulares y pantallas chicas)
+   ========================================================================== */
+@media (max-width: 768px) {
+
+
+
+
+    
+    .section-title {
+        font-size: 1.6rem !important; /* Mantiene el título compacto en baja resolución */
+        letter-spacing: 1px;
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem !important; /* Ajuste sutil del subtítulo */
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem !important; /* Mantiene equilibrado el nombre de las pizzas */
+    }
+
+    .product-card p, .about-text {
+        font-size: 0.9rem !important; /* El texto de lectura no se agranda y se queda fijo */
+    }
+
+
+
+    
+    /* 1. Ajuste del cuerpo general */
+    html, body {
+        height: 100vh;
+        overflow: hidden; /* Mantiene la pantalla fija sin scroll general */
+    }
+
+    /* 2. Rediseño de la barra de navegación para celulares */
+    .header-container {
+        flex-direction: column; /* Apila el logo arriba y los botones abajo */
+        gap: 15px;
+        padding: 15px 10px;
+    }
+
+    .logo {
+        gap: 10px;
+    }
+
+    .logo-img {
+        height: 38px; /* Achicamos un poco el logo en teléfonos */
+    }
+
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .logo-text small {
+        font-size: 0.75rem;
+    }
+
+    /* 3. Menú de navegación táctil */
+    .nav-menu {
+        width: 100%;
+        justify-content: space-around; /* Distribuye los botones equitativamente a lo ancho */
+        margin-left: 0;
+    }
+
+    .nav-btn {
+        margin-left: 0; /* Eliminamos el margen izquierdo viejo */
+        font-size: 0.85rem; /* Texto ligeramente más chico y cómodo */
+        padding: 8px 5px;
+    }
+
+    /* 4. Ajuste del contenedor del lienzo central */
+    .content-wrapper {
+        padding: 20px 15px;
+    }
+
+    /* 5. Comportamiento de las Secciones en el Centro */
+    .section-container {
+         /* 5. Comportamiento de las Secciones en el Centro para bajas resoluciones */
+    
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding-top: 50px; /* Margen generoso para que el título no toque la barra */
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 20px;
+        justify-content: flex-start; /* Evita que el flexbox eleve los títulos si el espacio vertical es poco */
+    
+
+    }
+
+   
+
+    /* 6. Cuadrícula de Productos en Celulares (Fija el parpadeo y desborde) */
+    .products-grid {
+        grid-template-columns: 1fr; /* Una pizza debajo de la otra en una sola columna */
+        gap: 20px;
+        padding-bottom: 30px; /* Margen de seguridad inferior para el scroll táctil */
+    }
+
+    .product-card {
+        padding: 20px;
+    }
+
+    .product-image-container {
+        height: 160px; /* Reducimos la altura de la foto en el teléfono */
+        margin-bottom: 15px;
+    }
+
+    /* 7. Texto de Quiénes Somos */
+    .about-content {
+        margin-top: 10px;
+        padding: 0 5px;
+    }
+
+    .about-text {
+        font-size: 1rem;
+        text-align: left; /* Más legible en columnas angostas de celular */
+        margin-bottom: 15px;
+    }
+
+   
+    .contact-form {
+        width: 100%;
+        padding-bottom: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input, .form-group textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+
+    .btn-submit {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    /* 9. Marca de agua de fondo adaptada */
+    .content-wrapper::before {
+        width: 90%;
+        max-width: 320px;
+        height: 70%;
+        opacity: 0.03; /* Aún más sutil en celulares para no interferir con la lectura a corta distancia */
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.3rem ;
+    }
+    .hero-legend {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .btn-hero-action {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    /* ... Tus estilos responsivos previos ... */
+
+    .contact-grid-wrapper {
+        width: 100%; /* Ocupa todo el ancho en celulares */
+        flex-direction: column; /* Apila el panel informativo arriba y el formulario abajo */
+        gap: 25px;
+        margin-bottom: 25px;
+    }
+
+    .contact-info-panel {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .panel-inside-title {
+        font-size: 1.3rem !important;
+    }
+
+    .info-text-box a {
+        font-size: 1rem;
+    }
+
+    .info-text-box p {
+        font-size: 0.95rem;
+    }
+
+    .map-embed-frame {
+        height: 180px; /* Reducimos la altura del mapa en celulares para evitar desplazamientos */
+    }
 }
