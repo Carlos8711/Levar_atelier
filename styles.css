@@ -5,13 +5,8 @@
     --accent-color: #b85d43; 
    --font-levar: 'Bebas Neue', sans-serif;
     --font-atelier: 'Inter', sans-serif;
-    --font-subtitulos: 'Marcellus', serif; /* Toque clásico italiano */
+    --font-subtitulos: 'Marcellus', serif; 
 }
-
-
-
-
-
 
 * {
     box-sizing: border-box;
@@ -40,7 +35,7 @@ html, body {
     position: relative;
     top: 0;
     transition: transform 0.4s ease-in-out, opacity 0.3s ease-in-out;
-    z-index: 1000; /* Prioridad máxima por encima de cualquier texto o sección */
+    z-index: 1000; 
 }
 
 
@@ -274,8 +269,8 @@ html, body {
 
 .section-container.active {
     opacity: 1;
-    pointer-events: auto; /* Habilita los clics y el formulario */
-    transform: scale(1); /* Vuelve a su tamaño real de forma sutil */
+    pointer-events: auto;
+    transform: scale(1); 
 }
 
 .section-title {
@@ -349,9 +344,7 @@ html, body {
     object-fit: cover; 
     transition: transform 0.4s ease;
 }
-/* ==========================================================================
-   ESTILOS PARA PRODUCTOS EN LANZAMIENTO (COMING SOON)
-   ========================================================================== */
+
 .product-coming-soon {
     position: relative;
     border-style: dashed; 
@@ -394,25 +387,21 @@ html, body {
                                         About section
 /*******************************************************************************************************/
 
-/* ==========================================================================
-   ESTILOS PREMIUM PARA LA SECCIÓN QUIÉNES SOMOS (DOS COLUMNAS)
-   ========================================================================== */
 .about-grid-wrapper {
     display: flex;
-    align-items: center; /* Alinea horizontalmente la foto y el texto en el centro */
+    align-items: center; 
     justify-content: center;
     width: 100%;
     max-width: 950px;
-    gap: 50px; /* Espacio elegante entre la imagen y el relato */
+    gap: 50px; 
     margin: 0 auto;
 }
 
-/* Caja contenedora de la foto de historia */
 .about-image-box {
     flex: 1;
     width: 100%;
-    height: 500px; /* Altura imponente para monitores */
-    border-radius: 12px; /* Mantiene la estética curva de las tarjetas y el logo */
+    height: 500px; 
+    border-radius: 12px; 
     overflow: hidden;
     box-shadow: 0 15px 30px rgba(0,0,0,0.05);
     background-color: var(--bg-alt);
@@ -421,14 +410,13 @@ html, body {
 .about-img-real {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Asegura que la foto llene el recuadro sin deformarse */
+    object-fit: cover; 
     display: block;
 }
 
-/* Ajustes del bloque de texto */
 .about-content {
-    flex: 1.2; /* Le damos un toque más de ancho al texto para una lectura relajada */
-    text-align: left; /* Alineación limpia para bloques largos de lectura */
+    flex: 1.2; 
+    text-align: left; 
     margin: 0;
 }
 
@@ -447,11 +435,8 @@ html, body {
     color: var(--text-main);
     line-height: 1.7;
     margin-bottom: 18px;
-    text-align: justify; /* Bloque uniforme y refinado */
+    text-align: justify; 
 }
-
-
-
 
 /******************************************************************************************************
                                         contact section
@@ -620,27 +605,6 @@ html, body {
 
 @media (max-width: 768px) {
 
-
-    .section-title {
-        font-size: 1.6rem; 
-    }
-
-    .section-subtitle {
-        font-size: 0.9rem ; 
-    }
-
-    .product-card h3 {
-        font-size: 1.2rem ; 
-    }
-
-    .product-card p, .about-text {
-        font-size: 0.9rem ; 
-    }
-
-
-
-    
-   
     html, body {
         height: 100vh;
         overflow: hidden; 
@@ -684,7 +648,6 @@ html, body {
         padding: 20px 15px;
     }
 
-
     .section-container {
         top: 0;
         left: 0;
@@ -695,8 +658,34 @@ html, body {
         padding-right: 10px;
         padding-bottom: 20px;
         justify-content: flex-start; 
-    
 
+    }
+      .section-title {
+        font-size: 1.6rem; 
+    }
+
+    .section-subtitle {
+        font-size: 0.9rem ; 
+    }
+
+    .hero-title {
+        font-size: 2.3rem ;
+    }
+    .hero-legend {
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+    .btn-hero-action {
+        padding: 10px 22px;
+        font-size: 0.95rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem ; 
+    }
+
+    .product-card p, .about-text {
+        font-size: 0.9rem ; 
     }
 
 
@@ -727,25 +716,6 @@ html, body {
         text-align: left; 
         margin-bottom: 15px;
     }
-  
-}
-
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: 2.3rem ;
-    }
-    .hero-legend {
-        font-size: 1rem;
-        margin-bottom: 20px;
-    }
-    .btn-hero-action {
-        padding: 10px 22px;
-        font-size: 0.95rem;
-    }
-}
-
-
-@media (max-width: 768px) {
 
     .contact-grid-wrapper {
         width: 100%; 
@@ -774,4 +744,76 @@ html, body {
     .map-embed-frame {
         height: 180px; 
     }
+ .about-grid-wrapper {
+        display: flex;
+        flex-direction: column; 
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .about-content {
+        order: 1; 
+        width: 100%;
+        text-align: center;
+        padding: 0 5px;
+    }
+
+         .about-image-box {
+        order: 2;
+        flex: none;
+        width: 60%;
+        height: 280px; 
+        border-radius: 8px;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.04);
+    }
+
+
+      .section-title {
+        font-size: 1.8rem ;
+        margin-bottom: 5px;
+    }
+
+    .section-subtitle-atelier {
+        font-size: 0.85rem ;
+        margin-bottom: 15px;
+    }
+
+    .about-text {
+        font-size: 0.92rem ;
+        line-height: 1.6;
+        margin-top: 15px; 
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+
+    .main-footer{
+        padding: 0;
+        margin: 0;
+    }
+
+.hero-title {
+    font-size: 2.5rem;
+
 }
+
+.hero-legend {
+    font-size: 0.78rem;
+    line-height: 1;
+ 
+}
+
+.btn-hero-action {
+    padding: 12px 28px;
+    font-size: 1rem; 
+}
+
+}
+
+
+
+
+
+
+
