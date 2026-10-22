@@ -33,8 +33,6 @@ html, body {
     
 }
 
-/* Encabezado */
-
 .main-header {
     background-color: var(--bg-color);
     border-bottom: 1px solid #e0e0de;
@@ -52,7 +50,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+
 }
 
 .logo-text {
@@ -67,9 +65,9 @@ html, body {
 .logo-text small {
    font-family: var(--font-atelier);
     font-size: 0.85rem;
-    font-weight: 300; /* Trazo fino */
+    font-weight: 300; 
     text-transform: uppercase;
-    letter-spacing: 6px; /* Clave: genera el espaciado abierto del logo original */
+    letter-spacing: 6px; 
     display: block;
     margin-top: 4px;
 }
@@ -77,8 +75,6 @@ html, body {
 .nav-menu {
     display: flex;
 }
-
-
 
 
 .nav-btn {
@@ -95,9 +91,6 @@ html, body {
     transition: color 0.3s;
 }
 
-.nav-btn:hover, .nav-btn.active {
-    color: var(--accent-color);
-}
 
 .nav-btn.active::after {
     content: '';
@@ -109,7 +102,7 @@ html, body {
     background-color: var(--accent-color);
 }
 
-/* Contenedor del Logo */
+
 .logo {
     display: flex;
     align-items: center;
@@ -132,8 +125,6 @@ html, body {
     letter-spacing: 1.5px;
     line-height: 0.9;
     display: inline-block;
-    
-    /* El secreto técnico: Estira la tipografía hacia arriba emulando el logo original */
     transform: scaleY(1.15); 
     transform-origin: bottom left;
 }
@@ -143,12 +134,9 @@ html, body {
     font-size: 0.8rem;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 5px; /* Mantiene la apertura elegante debajo de LEVAR */
-    display: block;
+    letter-spacing: 5px; 
     margin-top: 6px;
-    
-    /* Reseteamos la escala para que ATELIER no se estire y quede clásica */
-    transform: scaleY(1.0); 
+   transform: scaleY(1.0); 
 }
 
 
@@ -175,7 +163,6 @@ html, body {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    
     width: 100%;
     max-width: 800px;
     height: 100%;
@@ -207,20 +194,19 @@ html, body {
 }
 
 
-/* ==========================================================================
-   ESTILOS DE LA SECCIÓN DE INICIO (HERO)
-   ========================================================================== */
+/******************************************************************************************************
+                                        Hero section
+/*******************************************************************************************************/
+
 #inicio {
     padding: 0;
     margin: 0;
     width: 100%;
     height: 100%;
-    border-radius: 12px; /* Enmarca la sección como un cuadro flotante */
+    border-radius: 12px; 
     overflow: hidden;
-  
 }
 
-/* Capa oscura intermedia para asegurar que la tipografía blanca sea legible */
 .hero-overlay {
     position: absolute;
     top: 50%;
@@ -242,7 +228,6 @@ html, body {
     background-repeat: no-repeat;
     z-index: 1;
 }
-
 
 .hero-content {
     position: relative;
@@ -268,12 +253,11 @@ html, body {
     font-weight: 300;
     line-height: 1.6;
     margin-bottom: 30px;
-    font-style: italic; /* Toque elegante para la leyenda */
+    font-style: italic;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
     
 }
 
-/* Botón interactivo de acción */
 .btn-hero-action {
     background-color: transparent;
     color: #ffffff;
@@ -288,44 +272,11 @@ html, body {
     transition: background-color 0.3s base, color 0.3s ease;
 }
 
-.btn-hero-action:hover {
-    background-color: #ffffff;
-    color: #222222;
-}
-
-/* AJUSTE RESPONSIVO: Agregá esto dentro de tu @media (max-width: 768px) al final de tu archivo */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Clase clave que muestra únicamente la sección activa */
 .section-container.active {
     opacity: 1;
     pointer-events: auto; /* Habilita los clics y el formulario */
     transform: scale(1); /* Vuelve a su tamaño real de forma sutil */
 }
-
-
 
 .section-title {
     font-family: var(--font-levar);
@@ -343,29 +294,29 @@ html, body {
     font-size: 1.1rem;
 }
 
-/* Grid de Productos */
+/******************************************************************************************************
+                                        Product section
+/*******************************************************************************************************/
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+    gap: 10px;
     width: 100%;
-    justify-content: center; /* Centra las tarjetas si queda espacio sobrante */
-    max-width: 900px; /* Acota el ancho para mantener armonía visual en el centro */
+    justify-content: center; 
+    max-width: 1200px; 
     margin: 0 auto;
 }
 
 .product-card {
+    max-width: 300px; 
     background: var(--bg-color);
-    border: 1px solid #e0e0de;
+    border: 1px solid #9b9b996c;
     border-radius: 12px;
     padding: 30px;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
+
 
 .product-image-placeholder {
     font-size: 3rem;
@@ -378,39 +329,71 @@ html, body {
     margin-bottom: 10px;
     text-transform: uppercase;
 }
-
 .product-card p {
     color: var(--text-muted);
     font-size: 0.95rem;
 }
 
-/* Contenedor de la imagen del producto */
 .product-image-container {
     width: 100%;
-    height: 200px; /* Altura fija uniforme para las tres tarjetas */
-    border-radius: 8px; /* Combina con el diseño curvado del logo */
+    height: 200px; 
+    border-radius: 8px; 
     overflow: hidden;
     margin-bottom: 20px;
-    background-color: var(--bg-alt); /* Color base de carga */
+    background-color: var(--bg-alt); 
 }
 
-/* Imagen real escalada y centrada */
-.product-img-real {
 
+.product-img-real {
     height: 100%;
-    object-fit: cover; /* Recorta la imagen para que llene el recuadro sin deformarse */
+    object-fit: cover; 
     transition: transform 0.4s ease;
 }
+/* ==========================================================================
+   ESTILOS PARA PRODUCTOS EN LANZAMIENTO (COMING SOON)
+   ========================================================================== */
+.product-coming-soon {
+    position: relative;
+    border-style: dashed; 
+    border-color: #c0c0be;
+}
 
-/* Efecto de zoom sutil al pasar el mouse por la tarjeta */
-.product-card:hover .product-img-real {
-    transform: scale(1.06);
+.product-coming-soon .product-image-container {
+    position: relative;
+}
+
+.product-coming-soon .product-img-real {
+    opacity: 0.8;
+    filter: grayscale(20%);
+}
+#focaccia{
+    width: 100%;
+    height: 100%;
+}
+
+.badge-soon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--accent-color); 
+    color: #ffffff;
+    font-family: var(--font-titulos); 
+    font-size: 1.1rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 5;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 
 
+/******************************************************************************************************
+                                        About section
+/*******************************************************************************************************/
 
-/* Contenido Quiénes Somos */
 .about-content {
     max-width: 700px;
     margin: 40px auto 0 auto;
@@ -423,75 +406,20 @@ html, body {
     text-align: justify;
 }
 
-/* Formulario de Contacto */
-.contact-form {
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    font-size: 0.9rem;
-}
-
-.form-group input, .form-group textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #e0e0de;
-    background-color: var(--bg-color);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    border-radius: 6px;
-    color: var(--text-main);
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--text-main);
-}
-
-.btn-submit {
-    background-color: var(--text-main);
-    color: var(--bg-color);
-    border: none;
-    padding: 15px 30px;
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 6px;
-    transition: background-color 0.3s;
-}
-
-.btn-submit:hover {
-    background-color: var(--accent-color);
-}
 
 
 
-
-/* ==========================================================================
-   ESTILOS COMPLEMENTARIOS DE LA SECCIÓN DE CONTACTO & MAPA
-   ========================================================================== */
+/******************************************************************************************************
+                                        contac section
+/*******************************************************************************************************/
 .contact-grid-wrapper {
     display: flex;
-    width: 50%;
-   
+    width: 80%;
     gap: 40px;
     margin: 0 auto 40px auto;
     text-align: left;
 }
 
-/* Panel Informativo de Celulares y Dirección */
 .contact-info-panel {
     flex: 1;
     background-color: var(--bg-color);
@@ -502,6 +430,7 @@ html, body {
 }
 
 .panel-inside-title {
+    text-align: center;
     font-family: var(--font-titulos);
     font-size: 1.5rem;
     text-transform: uppercase;
@@ -512,13 +441,8 @@ html, body {
     padding-bottom: 10px;
 }
 
-.contact-form {
-    flex: 1;
-    margin: 0;
-    max-width: 100%;
-}
 
-/* Items individuales de datos */
+
 .info-item {
     display: flex;
     align-items: flex-start;
@@ -527,7 +451,7 @@ html, body {
 
 .info-item i {
     font-size: 1.4rem;
-    color: var(--accent-color); /* Tono terracota del horno para los iconos */
+    color: var(--accent-color);
     margin-top: 3px;
 }
 
@@ -548,9 +472,6 @@ html, body {
     transition: color 0.3s;
 }
 
-.info-text-box a:hover {
-    color: var(--accent-color);
-}
 
 .info-text-box p {
     font-size: 1.05rem;
@@ -562,10 +483,9 @@ html, body {
     color: var(--text-muted);
 }
 
-/* Contenedor del Mapa Fijo en el centro */
 .map-container-box {
     width: 100%;
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
     text-align: left;
 }
@@ -581,129 +501,109 @@ html, body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Footer Fijo */
+/******************************************************************************************************
+                                    footer
+/*******************************************************************************************************/
 .main-footer {
-    text-align: center;
-    padding: 20px;
-    border-top: 1px solid #e0e0de;
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    flex-shrink: 0;
-}
-/* Footer */
-.main-footer {
+    margin: 0 auto;
     text-align: center;
     padding: 30px 20px;
-    border-top: 1px solid #e0e0de;
     flex-shrink: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 15px; /* Espacio equilibrado entre la lista de iconos y el texto de copyright */
+    gap: 60px; 
 }
 
-/* Contenedor horizontal de las redes sociales */
 .social-links {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px; /* Espacio elegante entre cada icono */
+    gap: 15px;
 }
 
-/* Estilo individual para cada icono */
 .social-icon {
-    color: var(--text-main); /* Toma el color gris oscuro/negro principal */
-    font-size: 1.5rem; /* Tamaño ideal y legible */
+    color: var(--text-main); 
+    font-size: 1.5rem; 
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
     display: inline-block;
 }
 
-/* Efecto visual al pasar el mouse por encima */
-.social-icon:hover {
-    color: var(--accent-color); /* Cambia al tono terracota del horno */
-    transform: scale(1.15); /* Crece sutilmente de tamaño */
-}
+
+
 
 .footer-text {
     color: var(--text-muted);
     font-size: 0.9rem;
 }
 
-/**************************************************/
-/* ==========================================================================
-   ESTILOS RESPONSIVOS (Para celulares y pantallas chicas)
-   ========================================================================== */
+/******************************************************************************************************
+                                        Hero section
+/*******************************************************************************************************/
+.nav-btn:hover, .nav-btn.active {
+    color: var(--accent-color);
+}
+
+.social-icon:hover {
+    color: var(--accent-color); 
+    transform: scale(1.15); 
+}
+
+.btn-submit:hover {
+    background-color: var(--accent-color);
+}
+
+.product-card:hover .product-img-real {
+    transform: scale(1.06);
+}
+.info-text-box a:hover {
+    color: var(--accent-color);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+    .btn-hero-action:hover {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+/******************************************************************************************************
+                                        Estilo responsive
+/*******************************************************************************************************/
+
 @media (max-width: 768px) {
 
 
-
-
-    
     .section-title {
-        font-size: 1.6rem !important; /* Mantiene el título compacto en baja resolución */
-        letter-spacing: 1px;
+        font-size: 1.6rem; 
     }
 
     .section-subtitle {
-        font-size: 0.9rem !important; /* Ajuste sutil del subtítulo */
+        font-size: 0.9rem ; 
     }
 
     .product-card h3 {
-        font-size: 1.2rem !important; /* Mantiene equilibrado el nombre de las pizzas */
+        font-size: 1.2rem ; 
     }
 
     .product-card p, .about-text {
-        font-size: 0.9rem !important; /* El texto de lectura no se agranda y se queda fijo */
+        font-size: 0.9rem ; 
     }
 
 
 
     
-    /* 1. Ajuste del cuerpo general */
+   
     html, body {
         height: 100vh;
-        overflow: hidden; /* Mantiene la pantalla fija sin scroll general */
+        overflow: hidden; 
     }
 
-    /* 2. Rediseño de la barra de navegación para celulares */
     .header-container {
-        flex-direction: column; /* Apila el logo arriba y los botones abajo */
+        flex-direction: column; 
         gap: 15px;
         padding: 15px 10px;
     }
@@ -713,7 +613,7 @@ html, body {
     }
 
     .logo-img {
-        height: 38px; /* Achicamos un poco el logo en teléfonos */
+        height: 38px; 
     }
 
     .logo-text {
@@ -724,48 +624,42 @@ html, body {
         font-size: 0.75rem;
     }
 
-    /* 3. Menú de navegación táctil */
     .nav-menu {
         width: 100%;
-        justify-content: space-around; /* Distribuye los botones equitativamente a lo ancho */
+        justify-content: space-around; 
         margin-left: 0;
     }
 
     .nav-btn {
-        margin-left: 0; /* Eliminamos el margen izquierdo viejo */
-        font-size: 0.85rem; /* Texto ligeramente más chico y cómodo */
+        margin-left: 0; 
+        font-size: 0.85rem; 
         padding: 8px 5px;
     }
 
-    /* 4. Ajuste del contenedor del lienzo central */
     .content-wrapper {
         padding: 20px 15px;
     }
 
-    /* 5. Comportamiento de las Secciones en el Centro */
+
     .section-container {
-         /* 5. Comportamiento de las Secciones en el Centro para bajas resoluciones */
-    
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        padding-top: 50px; /* Margen generoso para que el título no toque la barra */
+        padding-top: 50px; 
         padding-left: 10px;
         padding-right: 10px;
         padding-bottom: 20px;
-        justify-content: flex-start; /* Evita que el flexbox eleve los títulos si el espacio vertical es poco */
+        justify-content: flex-start; 
     
 
     }
 
-   
 
-    /* 6. Cuadrícula de Productos en Celulares (Fija el parpadeo y desborde) */
     .products-grid {
-        grid-template-columns: 1fr; /* Una pizza debajo de la otra en una sola columna */
+        grid-template-columns: 1fr; 
         gap: 20px;
-        padding-bottom: 30px; /* Margen de seguridad inferior para el scroll táctil */
+        padding-bottom: 30px; 
     }
 
     .product-card {
@@ -773,11 +667,10 @@ html, body {
     }
 
     .product-image-container {
-        height: 160px; /* Reducimos la altura de la foto en el teléfono */
+        height: 160px; 
         margin-bottom: 15px;
     }
 
-    /* 7. Texto de Quiénes Somos */
     .about-content {
         margin-top: 10px;
         padding: 0 5px;
@@ -785,37 +678,10 @@ html, body {
 
     .about-text {
         font-size: 1rem;
-        text-align: left; /* Más legible en columnas angostas de celular */
+        text-align: left; 
         margin-bottom: 15px;
     }
-
-   
-    .contact-form {
-        width: 100%;
-        padding-bottom: 30px;
-    }
-
-    .form-group {
-        margin-bottom: 15px;
-    }
-
-    .form-group input, .form-group textarea {
-        padding: 10px;
-        font-size: 0.95rem;
-    }
-
-    .btn-submit {
-        padding: 12px;
-        font-size: 1rem;
-    }
-
-    /* 9. Marca de agua de fondo adaptada */
-    .content-wrapper::before {
-        width: 90%;
-        max-width: 320px;
-        height: 70%;
-        opacity: 0.03; /* Aún más sutil en celulares para no interferir con la lectura a corta distancia */
-    }
+  
 }
 
 @media (max-width: 768px) {
@@ -834,11 +700,10 @@ html, body {
 
 
 @media (max-width: 768px) {
-    /* ... Tus estilos responsivos previos ... */
 
     .contact-grid-wrapper {
-        width: 100%; /* Ocupa todo el ancho en celulares */
-        flex-direction: column; /* Apila el panel informativo arriba y el formulario abajo */
+        width: 100%; 
+        flex-direction: column; 
         gap: 25px;
         margin-bottom: 25px;
     }
@@ -849,7 +714,7 @@ html, body {
     }
 
     .panel-inside-title {
-        font-size: 1.3rem !important;
+        font-size: 1.3rem ;
     }
 
     .info-text-box a {
@@ -861,6 +726,6 @@ html, body {
     }
 
     .map-embed-frame {
-        height: 180px; /* Reducimos la altura del mapa en celulares para evitar desplazamientos */
+        height: 180px; 
     }
 }
