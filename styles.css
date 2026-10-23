@@ -250,7 +250,6 @@ html, body {
     margin-bottom: 30px;
     font-style: italic;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
-    
 }
 
 .btn-hero-action {
@@ -672,9 +671,16 @@ html, body {
         font-size: 2.3rem ;
     }
     .hero-legend {
-        font-size: 1rem;
-        margin-bottom: 20px;
+        font-size: 1.8rem;
+        margin-bottom: 50px;
     }
+
+
+.hero-overlay {
+    width: 100%;
+}
+
+
     .btn-hero-action {
         padding: 10px 22px;
         font-size: 0.95rem;
