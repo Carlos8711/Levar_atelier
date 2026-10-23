@@ -177,7 +177,7 @@ html, body {
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding-top: 30px; 
+    padding-top: 80px; 
     top: 0;
     left: 0;
     right: 0;
@@ -237,7 +237,7 @@ html, body {
 
 .hero-title {
     font-family: var(--font-heading);
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin-bottom: 15px;
