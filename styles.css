@@ -107,7 +107,7 @@ html, body {
 
 
 .logo-img {
-    height: 80px; 
+    height: 100px; 
     width: auto;
     object-fit: contain;
 }
@@ -381,6 +381,21 @@ html, body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.badge-soon-product {
+    position: absolute;
+    transform: translate(-100%, -150%);
+    background-color: var(--accent-color); 
+    color: #ffffff;
+    font-family: var(--font-titulos); 
+    font-size: 1.1rem;
+    padding: 4px 12px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    z-index: 14;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
 
 
 /******************************************************************************************************
@@ -621,9 +636,6 @@ html, body {
         gap: 10px;
     }
 
-    .logo-img {
-        height: 38px; 
-    }
 
     .logo-text {
         font-size: 1.5rem;
@@ -714,6 +726,11 @@ html, body {
         height: 160px; 
         margin-bottom: 15px;
     }
+
+    .badge-soon-product {
+    transform: translate(-100%, -100%);
+    }
+
 
     .about-content {
         margin-top: 10px;
@@ -819,7 +836,6 @@ html, body {
 }
 
 }
-
 
 
 
